@@ -1057,3 +1057,19 @@ console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
+
+const printForecast = function(arr){
+    let textForeCast = '';
+    for(let i = 0; i < arr.length; i++){
+        if(i == 0){
+            textForeCast += `... ${arr[i]}ºC in ${i+1} days ... `;
+        }else if(i == arr.length - 1){
+            textForeCast += `${arr[i]}ºC in ${i+1} days ...`;
+        }else{
+            textForeCast += `${arr[i]}ºC in ${i+1} days ... `;
+        }
+    }
+    console.log(textForeCast);
+}
+
+printForecast([5, 8, 0, -1, 53, 20, 78]);
