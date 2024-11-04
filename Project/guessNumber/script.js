@@ -5,35 +5,44 @@ const number = document.querySelector('.number');
 const score = document.querySelector('.score');
 const btnCheck = document.querySelector('.check');
 const btnAgain = document.querySelector('.again');
+const highScore = document.querySelector('.highscore');
 
 let secretNumber = Math.floor(Math.random() * 20) + 1;
 let scoreLabel = 20;
+let highScorex = 0;
+
+const displayMesg = function(message){
+    mesg.textContent = message;
+}
+
+const changeStyleElementNumber = function(width, mesg){
+    number.style.width = width;
+    number.textContent = mesg;
+}
+
+const changeBodyBackgroundColor = function(color){
+    document.body.style.backgroundColor = color;
+}
 
 btnCheck.addEventListener('click', function(){
     const guessNumber = Number(document.querySelector('.guess').value);
     if(!guessNumber){
-        mesg.textContent = `No number!😒`
+        displayMesg(`No number!😒`);
     }else if(guessNumber === secretNumber){
-        mesg.textContent = `Correct Number!😁`
-        document.body.style.backgroundColor = '#40c057';
-        number.style.width = '30rem';
-        number.textContent = secretNumber;
-    }else if(guessNumber > secretNumber){
+        displayMesg(`Correct Number!😁`);
+        changeBodyBackgroundColor('#40c057');
+        changeStyleElementNumber('30rem', secretNumber);
+        if(scoreLabel > highScorex){
+            highScore.textContent = scoreLabel;
+            highScorex = scoreLabel;
+        }
+    }else if(guessNumber !== secretNumber){
         if(scoreLabel > 1){
-            mesg.textContent = `Too high!🫠`
+            displayMesg(guessNumber > secretNumber ? mesg.textContent = `Too high!🫠` : mesg.textContent = `Too low!🤣`);
             scoreLabel -= 1;
             score.textContent = scoreLabel; 
         }else {
-            mesg.textContent = `You lose the game!😢`
-            score.textContent = 0; 
-        }
-    }else if(guessNumber < secretNumber){
-        if(scoreLabel > 1){
-            mesg.textContent = `Too low!🤣`
-            scoreLabel -= 1;
-            score.textContent = scoreLabel;
-        }else{
-            mesg.textContent = `You lose the game!😢`
+            displayMesg(`You lose the game!😢`);
             score.textContent = 0; 
         }
     }
@@ -48,9 +57,8 @@ btnAgain.addEventListener('click', function(){
     guessNumber.value = ``;
     scoreLabel = 20;
     score.textContent = scoreLabel;
-    mesg.textContent = `Start guessing...`;
-    number.textContent = `?`;
-    number.style.width = '15rem';
-    document.body.style.backgroundColor = '#222';
+    displayMesg(`Start guessing...`);
+    changeStyleElementNumber('15rem', `?`);
+    changeBodyBackgroundColor('#222');
     changeRandomNumber();
 })
