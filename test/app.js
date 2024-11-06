@@ -1321,3 +1321,199 @@ function printBookAuthorsCount(title, ...authors){
 }
 
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+const hasExamplesInJava  = function(book){
+  console.log(book.programmingLanguage === 'Java' || 'no data available');
+}
+hasExamplesInJava(books[0]);
+
+for(let i = 0; i < books.length; i++){
+  books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+}
+
+const game = { 
+  team1: 'Bayern Munich', 
+  team2: 'Borrussia Dortmund', 
+  players: [ 
+    [ 
+      'Neuer', 
+      'Pavard', 
+      'Martinez', 
+      'Alaba', 
+      'Davies', 
+      'Kimmich', 
+      'Goretzka', 
+      'Coman', 
+      'Muller', 
+      'Gnarby', 
+      'Lewandowski', 
+    ], 
+    [ 
+      'Burki', 
+      'Schulz', 
+      'Hummels', 
+      'Akanji', 
+      'Hakimi', 
+      'Weigl', 
+      'Witsel', 
+      'Hazard', 
+      'Brandt', 
+      'Sancho', 
+      'Gotze', 
+    ], 
+  ], 
+  score: '4:0', 
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski',  
+  'Hummels'], 
+  date: 'Nov 9th, 2037', 
+  odds: { 
+    team1: 1.33, 
+    x: 3.25, 
+    team2: 6.5, 
+  }, 
+};
+
+const [players1, players2] = game.players;
+const [gk, ...fieldPlayers] = players1;
+const allPlayers = [...players1, ...players2];
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+const {team1, x: draw, team2} = game.odds
+
+function printGoals(...arrPlayer){
+  console.log(`${arrPlayer.length} goals score.`);
+}
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich', ...game.score);
+
+team1 < team2 && console.log(team1)
+team1 > team2 && console.log(team2)
+
+const schools = ['saintjohn', 'samsen', 'promptpun'];
+for(const item of schools) console.log(item);
+
+for(const item of schools.entries()) console.log(item[0] + 1, item[1]);
+
+for(const [index, value] of schools.entries()) console.log(index+1, value);
+
+let sum = 0;
+
+for(const item of books) sum += item.pages;
+
+console.log(sum);
+
+const allAuthors = [];
+for(let book of books){
+  if(typeof book.author === 'object'){
+    for(let author of bookAuthor){
+      allAuthors.push(author);
+    }
+  }else{
+    allAuthors.push(book.author);
+  }
+}
+
+console.log(typeof [])
+for(let [index, author] of allAuthors.entries()){
+  console.log(index+1, author);
+}
+
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+// Do the rest
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1],
+  [bookData[2][0]]: bookData[2][1]
+  // ...
+};
+
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages
+  // ...
+}
+console.log(newBook2);
+
+const getFirstKeyword = function(book){
+  console.log(book.keywords?.[0]);
+}
+
+getFirstKeyword(books[0]); // from previous tasks
+
+for(let [key, value] of game.scored.entries()){
+  console.log(`Goal ${key+1}: ${value}`);
+}
+
+let averageOdd = 0;
+
+console.log(Object.values(game.odds));
+for(let value of Object.values(game.odds)){
+  averageOdd += value;
+}
+averageOdd /= Object.keys(game.odds).length;
+console.log(averageOdd);
+
+for(let [key, value] of Object.entries(game.odds)){
+  if(key === 'x'){
+    console.log(`Odd of draw ${game[key] ?? ''}: ${value}`);
+  }else{
+    console.log(`Odd of victory ${game[key] ?? ''}: ${value}`);
+  }
+}
+
+const scorers = {}
+let count = 0;
+for(let player of game.scored){
+  scorers[player] ? scorers[player]+= 1 : scorers[player] = 1;
+}
+
+const entries = [];
+for(let book of Object.keys(books[0].thirdParty.goodreads)){
+  entries.push([book]);
+}
+
+// console.log(entries);
+
+for(let [key, value] of Object.values(books[0].thirdParty.goodreads).entries()){
+  entries[key].push(value);
+}
+
+const entries2 = Object.entries(books[0].thirdParty.goodreads)
+console.log(entries, entries2)
+
+const menu = new Set(["pasta", "pizza"])
+let allKeywords = [];
+const sets = new Set();
+
+for(let book of books){
+  allKeywords.push(...book.keywords);
+}
+
+const uniqueKeywords = new Set(allKeywords);
+uniqueKeywords.add('coding');
+uniqueKeywords.add('science')
+uniqueKeywords.delete('business');
+const uniqueKeywordsArr = [...uniqueKeywords];
+uniqueKeywords.clear();
+console.log(uniqueKeywords);
+
+const bookMap = new Map();
+bookMap.set('title', 'Clean Code').set('author', 'Robert C. Martin');
+bookMap.set('pages', 464);
+console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
+bookMap.has('author') ? console.log('The author of the book is known') : '';
+
+console.log([...bookMap.keys()]);
+console.log([...bookMap.values()]);
+
+const firstBookMap = new Map(Object.entries(books[0]));
+console.log(firstBookMap);
+for(let [key, value] of firstBookMap){
+  typeof value === 'number' ? console.log(key) : '';
+}
