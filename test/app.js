@@ -1517,3 +1517,103 @@ console.log(firstBookMap);
 for(let [key, value] of firstBookMap){
   typeof value === 'number' ? console.log(key) : '';
 }
+
+const gameEvents = new Map([ 
+  [17, '⚽ GOAL'], 
+  [36, '🔁 Substitution'], 
+  [47, '⚽ GOAL'], 
+  [61, '🔁 Substitution'], 
+  [64, '🔶 Yellow card'], 
+  [69, '🔴 Red card'], 
+  [70, '🔁 Substitution'], 
+  [72, '🔁 Substitution'], 
+  [76, '⚽ GOAL'], 
+  [80, '⚽ GOAL'], 
+  [92, '🔶 Yellow card'], 
+]);
+
+const events = [new Set([...gameEvents.values()])];
+gameEvents.delete(64);
+const lastEvent = [...gameEvents.keys()].pop();
+console.log(`An event happened, on average, every ${lastEvent/gameEvents.size} minutes`);
+for(let [minute, event] of gameEvents.entries()){
+  minute <= 45 ? console.log(`[FIRST HALF] ${minute}: ${event}`) : console.log(`[SECOND HALF] ${minute}: ${event}`);
+}
+// console.log(events, gameEvents);
+console.log(books[0].ISBN[6], books[0].ISBN[4], books[0].ISBN[9], books[0].ISBN[8]);
+const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf('chess'));
+console.log(quote.slice(quote.indexOf('boxing')));
+const isContributor = function(authorName){
+  const subStr = authorName.slice(authorName.indexOf('Contributor'), -1);
+  console.log(subStr === 'Contributor' ? true : false);
+}
+
+isContributor('Julie Sussman (Contributor)');
+console.log('nickel'.replaceAll('n', 'k'));
+
+function normalizeAuthorName(authorName){
+  const newAuthorName = String(authorName).toLowerCase().trim().slice(0, authorName.lastIndexOf(' ')-1);
+  const firstName = newAuthorName.slice(0, newAuthorName.indexOf(' '));
+  const lastName = newAuthorName.slice(newAuthorName.indexOf(' ')+1);
+  const newName = firstName[0].toUpperCase() + firstName.slice(1) + ' ' + lastName[0].toUpperCase() + lastName.slice(1);
+  console.log(newName);
+}
+
+normalizeAuthorName('  JuliE sussMan (Contributor)');
+const newBookTitle = books[1].title.replace('Programs', 'Software');
+
+const logBookTheme = function(titleBook){
+  const newTitleBook = String(titleBook).toLowerCase().trim();
+  if(newTitleBook.startsWith('computer')){
+    console.log('This book is about computers');
+  }else if(newTitleBook.includes('algorithms') && newTitleBook.includes('structures')){
+    console.log('This book is about algorithms and data structures');
+  }else if(newTitleBook.endsWith('system') || newTitleBook.endsWith('systems') && !newTitleBook.includes('operating')){
+    console.log('This book is about some systems, but definitely not about operating systems');
+  }
+}
+
+const logBookCategories = function(bookCategories){
+  const categories = bookCategories.split(';');
+  for(let c of categories)
+    console.log(c);
+}
+
+const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+logBookCategories(bookCategories);
+
+function getKeywordsAsString(books){
+  const arrBooks = [];
+  for(let b of books){
+    arrBooks.push(...b.keywords);
+  }
+  const arrBookUnique = [...new Set(arrBooks)];
+  console.log(arrBookUnique.join(';'));
+}
+
+getKeywordsAsString(books);
+
+function logBookChapters(arr){
+  for(let [key, value] of arr){
+    console.log(key.padEnd(20, '_'), value);
+  }
+}
+
+const bookChapters = [['The Basics', 14], ['Sorting', 254], ['Searching', 372], ['Graphs', 526], ['Strings', 706]];
+logBookChapters(bookChapters);
+
+const modifyText = function(){
+  const valueTextare = document.querySelector('textarea').value;
+  const newValue = valueTextare.split('\n');
+  for(let [key, value] of newValue.entries()){
+    const [firstV, lastV] = value.trim().toLowerCase().split('_');
+    console.log(`${(firstV+lastV.replace(lastV[0], lastV[0].toUpperCase())).padEnd(20, ' ')} ${'✅'.repeat(key+1)}`);
+  }
+}
+
+document.body.append(document.createElement('textarea')); 
+document.body.append(document.createElement('button'));
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', modifyText);
