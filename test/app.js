@@ -1616,4 +1616,114 @@ document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 const btn = document.querySelector('button');
 
-btn.addEventListener('click', modifyText);
+// btn.addEventListener('click', modifyText);
+
+const change3Str = str => str.slice(0, 3).toUpperCase();
+const flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+const arrFlights = flights.split('+');
+for(let flg of arrFlights){
+  const [state, start, end, time] = flg.split(';');
+  const emoji = state.startsWith('_Delayed') ? '😭 ' : '';
+  console.log(`${emoji}${state.replaceAll('_', ' ').trim()} from ${change3Str(start)} to ${change3Str(end)} (${time.replace(':', 'h')})`.padStart(45, ' '));
+}
+
+//Low abstract || FirstClassfunction
+const convertStrToUpper = function(text){
+  return text.toUpperCase();
+}
+
+const convertStrtoLower = function(text){
+  return text.toLowerCase();
+}
+
+//High abstraction
+//high order function
+const tranformer = function(text, fn){
+  console.log(`oldText = ${text}`);
+  console.log(`newText = ${fn(text)}`);
+  console.log(`changeby = ${fn.name}`);
+}
+
+tranformer('HeLlo JaVascript', convertStrToUpper);
+
+const greet = (greeting) => {
+  return (name) => {
+    console.log(`${greeting} ${name}`);
+  }
+}
+
+// const sayHi = function(name){console.log(`${greeting} ${name}`);}
+const sayHi = greet('nickel');
+sayHi('Hello');
+
+const addTax = (rate) => (value) => value + value * rate;
+
+const addVax = addTax(0.23);
+console.log(addVax(23));
+
+const poll = { 
+  question: "What is your favourite programming language?", 
+  options: ["0: JavaScript", "1: Python", "2: Rust", "3:  C++"], 
+  // This generates [0, 0, 0, 0]. More in the next section! 
+  answers: new Array(4).fill(0), 
+  registerNewAnswer: function(){
+    const userAns = Number(prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`));
+    // console.log(this);
+    typeof userAns === 'number' && userAns < this.answers.length ? this.answers[userAns] ++: '';
+    // console.log(this.answers[userAns]);
+    this.displayResults();
+    this.displayResults('string');
+  },
+  displayResults: function(type = 'array'){
+    if(type === 'string'){
+      console.log(`Poll results are ${this.answers.join(', ')}`);
+    }else{
+      console.log(this.answers);
+    }
+  }
+  
+};
+
+document.querySelector('.btnAns').addEventListener('click', poll.registerNewAnswer.bind(poll));
+const newArr = poll.displayResults.bind({answers: [5, 2, 3]});
+newArr('string');
+
+//run one function IFFE
+(function(){
+  console.log('hello javascript');
+})();
+
+(() => console.log('hello again!'))();
+
+let c;
+const a = function(){
+  let b = 777;
+  c = function(){
+    console.log(`nick is gay.${++b}`);
+  }
+}
+a();
+c();
+c();
+c();
+console.dir(c);
+
+(function () { 
+  const header = document.querySelector('h1'); 
+  header.style.color = 'red'; 
+  document.body.addEventListener('click', function(){
+    header.style.color = 'blue';
+  })
+})();
+
+const checkDogs = function(dogsJulia , dogsKate){
+  const dogsJuliaNocat = [...dogsJulia];
+  dogsJuliaNocat.splice(0, 1);
+  dogsJuliaNocat.splice(-2);
+  const concatDogs = dogsJuliaNocat.concat(dogsKate);
+  concatDogs.forEach(function(dog, numDog){
+    dog < 3 ? console.log(`Dog number ${numDog+1} is still a puppy`) : console.log(`Dog number ${numDog+1} is an adult, and is ${dog} years old`);
+  })
+}
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
