@@ -108,3 +108,77 @@ const displayMovs = function(movements){
 }
 
 displayMovs(account1.movements);
+
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce(function(sum, mov){
+    return sum + mov;
+  }, 0)
+  labelBalance.textContent = balance + '€';
+}
+
+calcDisplayBalance(account1.movements);
+
+const calcDisplaySum = function(movements){
+  const income = movements.filter(function(mov){
+    return mov >= 0;
+  }).reduce(function(sum, mov){
+    return sum + mov;
+  }, 0);
+  labelSumIn.textContent = `${income}€`;
+
+  const out = movements.filter(function(mov){
+    return mov < 0;
+  }).map(function(mov){
+    return Math.abs(mov);
+  }).reduce(function(sum, mov){
+    return sum + mov;
+  }, 0);
+  labelSumOut.textContent = `${out}€`;
+  
+  const interest = movements.filter(function(mov){
+    return mov >= 0;
+  }).map(function(deposit){
+    return deposit * 1.2 / 100;
+  }).filter(function(int){
+    return int >= 1;
+  }).reduce(function(sum, interest){
+    return sum + interest;
+  }, 0)
+  labelSumInterest.textContent = `${interest}€`;
+}
+
+calcDisplaySum(account1.movements);
+
+function createUsernames(accounts){
+  accounts.forEach(function(acc){
+    acc.userName = acc.owner.toLowerCase().split(' ').map(function(user){
+      return user[0];
+    }).join('');
+  })
+}
+
+createUsernames(accounts);
+
+const deposits = movements.filter(function(mov){
+  return mov >= 0;
+});
+
+const withdraws = movements.filter(function(mov){
+  return mov < 0;
+});
+
+const findMaxBalance = movements.reduce(function(sum, mov){
+  return sum < mov ? sum = mov : sum;
+}, movements[0]);
+
+const findMinBalance = movements.reduce(function(sum, mov){
+  return sum > mov ? sum = mov : sum;
+}, movements[0]);
+
+console.log(findMaxBalance, findMinBalance);
+
+const account = accounts.find(function(acc){
+  return acc.owner === 'Sarah Smith';
+})
+
+console.log(account);

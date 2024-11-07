@@ -1727,3 +1727,13 @@ const checkDogs = function(dogsJulia , dogsKate){
 }
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+const calcAverageHumanAge = function(ages){
+  const avgHumanAges = ages
+                        .map((age) => age <= 2 ? 2 * age : 16 + age * 4)
+                        .filter(age => age > 18)
+                        .reduce((sum, age, i, arr) => sum + age/arr.length, 0);
+  return avgHumanAges;
+}
+
+console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
