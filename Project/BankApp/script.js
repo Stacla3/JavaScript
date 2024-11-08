@@ -157,6 +157,7 @@ const now = new Date();
 console.log(now);
 console.log(new Date(0));
 
+// year month date hours minutes second
 const future = new Date(2027, 2, 28, 16, 0);
 console.log(future);
 console.log(future.getFullYear());
