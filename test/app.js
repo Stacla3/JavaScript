@@ -1792,3 +1792,161 @@ const sortedDogs = Array.from(dogs).sort(function(x, y){
 });
 
 console.log(sortedDogs);
+
+const Person = function(firstName, lastName){
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const nickel = new Person('Thanapat', 'Malikaew');
+
+Person.prototype.fullName = function(){
+  console.log(this.firstName + this.lastName);
+}
+
+nickel.fullName()
+console.log(Person.prototype === nickel.__proto__);
+console.log(Person.prototype.isPrototypeOf(nickel));
+
+Person.prototype.phoneNumber = '074-414-4343';
+console.log(nickel.hasOwnProperty('phoneNumber'));
+console.log(nickel.hasOwnProperty('firstName'));
+
+const Car = function(make, speed){
+  this.make = make;
+  this.speed = speed;
+}
+
+Car.prototype.accelerate = function(){
+  this.speed += 10;
+  console.log(this.speed);
+}
+
+Car.prototype.brake = function(){
+  this.speed -= 5;
+  console.log(this.speed);
+}
+
+const car1 = new Car('BMW', 120);
+const car2 = new Car('Mercedes', 95);
+car1.accelerate();
+car1.brake();
+car2.accelerate();
+car2.brake();
+
+class Food {
+  constructor(name, price){
+    this.name = name;
+    //protected 
+    this._price = price;
+  }
+  calcPrice(){
+    return this._price * 4;
+  }
+  get name(){
+    return this._name;
+  }
+  set name(name){
+    this._name = name;
+  }
+  getPrice(){
+    return this._price;
+  }
+  // instance ไม่ได้รับสืบทอด method นี้
+  static restaurant(){
+    return this.restaurant = 'nickelStyle';
+  }
+}
+
+const pizza = new Food();
+pizza.name = 'pizzahut';
+console.log(pizza.name)
+console.log(pizza.calcPrice());
+// console.log(pizza.restaurant);
+
+const PersonNickel = {
+  greet: function(){
+    console.log('hi nick');
+  }
+}
+
+const nick = Object.create(PersonNickel);
+nick.greet();
+console.log(nick.__proto__ === PersonNickel);
+
+class CarCl {
+  constructor(make, speed){
+    this.make = make;
+    this.speed = speed;
+  }
+  set speedUS(speed){
+    this.speed = this.speed * 1.6;
+  }
+  get speedUS(){
+    return this.speed / 1.6;
+  }
+  accelerate(){
+    this.speed += 10;
+    console.log(this.speed);
+  }
+  brake(){
+    this.speed -= 10;
+    console.log(this.speed);
+    return this;
+  }
+}
+
+const carC1 = new CarCl('BMW', 120);
+const carC2 = new CarCl('Mercedes', 95);
+carC1.accelerate();
+carC1.brake();
+carC2.accelerate();
+carC2.brake();
+console.log(carC1.speedUS, carC2.speedUS, carC1 instanceof Object);
+
+const EV = function(make, speed, charge){
+  Car.call(this, make, speed);
+  this.charge = charge;
+}
+
+EV.prototype = Object.create(Car.prototype);
+
+EV.prototype.chargeBattery = function(chargeTo){
+  this.charge = chargeTo;
+}
+
+EV.prototype.accelerate = function(){
+  this.speed += 20;
+  this.charge --;
+  console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`);
+}
+
+const ec1 = new EV('Tesla', 120, 23);
+console.log(ec1);
+ec1.accelerate();
+ec1.brake();
+ec1.chargeBattery(50);
+ec1.accelerate();
+ec1.brake();
+
+class EVCl extends CarCl{
+  #charge;
+  constructor(make, speed, charge){
+    super(make, speed);
+    this.#charge = charge;
+  }
+  chargeBattery(chargeTo){
+    this.#charge = chargeTo;
+    return this;
+  }
+  accelerate(){
+    this.speed += 20;
+    this.#charge --;
+    console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.#charge}%`);
+    return this;
+  }
+}
+
+const evc1 = new EVCl('Rivian', 120, 23);
+evc1.chargeBattery(90).accelerate().brake().chargeBattery(50).accelerate();
+console.log(evc1);
