@@ -1,0 +1,1 @@
+const sayHina = 'hello javascript';
