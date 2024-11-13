@@ -1950,3 +1950,207 @@ class EVCl extends CarCl{
 const evc1 = new EVCl('Rivian', 120, 23);
 evc1.chargeBattery(90).accelerate().brake().chargeBattery(50).accelerate();
 console.log(evc1);
+
+//AJAX
+
+const h1El = document.querySelector('h1');
+h1El.style.display = 'none';
+
+const renderCountry = function(data){
+  const fifa = data.fifa.toLowerCase();
+  const languageC = data.languages[`${fifa}`];
+  const {cur, ...currencies} = data.currencies;
+  console.log(languageC, currencies)
+  const html = `
+        <article class="country">
+          <img class="country__img" src="${data.flags.svg}" />
+          <div class="country__data">
+          <h3 class="country__name">${data.name.common}</h3>
+          <h4 class="country__region">${data.region}</h4>
+          <p class="country__row"><span>👫</span>${(data.population/10000000).toFixed(1)*10000000}</p>
+          <p class="country__row"><span>🗣️</span>${languageC}</p>
+          <p class="country__row"><span>💰</span>${data.currencies}</p>
+        </div>
+      </article>`
+  h1El.insertAdjacentHTML('beforebegin', html);
+}
+
+// const getCountryNeighboor = function(country){
+//   const request = new XMLHttpRequest();
+//   request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
+//   request.send();
+//   request.addEventListener('load', function(){
+//     const [data] = JSON.parse(this.responseText);
+//     renderCountry(data);
+//     console.log(data)
+
+//     //Ajax neighboor
+//     const [neighboor] = data.borders;
+//     if(!neighboor) return;
+//     const request2 = new XMLHttpRequest();
+//     request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighboor}`);
+//     request2.send();
+//     request2.addEventListener('load', function(){
+//       const [data2] = JSON.parse(this.responseText);
+//       console.log(data2)
+//       renderCountry(data2);
+//     })
+//   })
+// }
+
+// getCountryNeighboor('thailand');
+
+const getJSON = function(url, errorMsg = 'Some thing went wrong.'){
+  return fetch(url).then(function(response){
+    if(!response.ok) 
+      throw new Error(`${errorMsg}`)
+    return response.json();
+  })
+}
+
+const getCountryData = function(country){
+  getJSON(`https://restcountries.com/v3.1/name/${country}`, 'Country not found.')
+  .then(data => {
+    renderCountry(data[0])
+    const neighboor = data[0].borders?.[0];
+    if(!neighboor) return;
+    return getJSON(`https://restcountries.com/v3.1/alpha/${neighboor}`, 'Country not found.');
+  })
+  .then(data => renderCountry(data[0]))
+  .catch(err => console.error(`${err} 😭`));
+}
+
+const whereAmI = function(lat, lng){
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`)
+  .then(response => {
+    if(!response.ok) 
+      throw new Error('You musn\'t reload your web page 3 time/second.')
+    return response.json()
+  })
+  .then(data => {
+    console.log(`You are in ${data.city}, ${data.country}`)
+    console.log(data);
+    return fetch(`https://restcountries.com/v3.1/name/${data.country}`)
+  })
+  .then(response => {
+    if(!response.ok)
+      throw new Error('Can\'t fetch Api Restcountries.');
+    return response.json();
+  })
+  .then(data => renderCountry(data[0]))
+  .catch(err => console.error(err.message));
+}
+
+whereAmI(19.037, 72.873);
+whereAmI(-33.933, 18.474);
+
+// const getDataApi = function(){
+//   fetch('http://dataservice.accuweather.com/locations/v1/regions')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+// }
+
+// getDataApi();
+
+const lotteryPromise = new Promise(function(resolve, reject){
+  if(Math.random() >= 0.5)
+    resolve('You win 🎉');
+  else
+    reject(new Error('You lose 😭'));
+
+})
+
+lotteryPromise.then(response => console.log(response));
+
+const wait = function(seconds){
+  return new Promise(function(resolve){
+    setTimeout(resolve, seconds * 1000);
+  })
+}
+
+wait(2).then(() => wait(3));
+
+
+
+const getPosition = function(){
+  return new Promise(function(resolve, reject){
+    navigator.geolocation.getCurrentPosition(position => {
+      resolve(position);
+    }, error => {
+      reject(error);
+    })
+  });
+}
+
+getPosition().then(pos => console.log(pos));
+const whereAmII = function(){
+  getPosition()
+  .then(pos => {
+    const {latitude: lat, longitude: lng} = pos.coords;
+    console.log(lat, lng);
+    return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`)
+  })
+  .then(response => {
+    if(!response.ok) 
+      throw new Error('You musn\'t reload your web page 3 time/second.')
+    return response.json()
+  })
+  .then(data => {
+    console.log(`You are in ${data.city}, ${data.country}`)
+    console.log(data);
+    return fetch(`https://restcountries.com/v3.1/name/${data.country}`)
+  })
+  .then(response => {
+    if(!response.ok)
+      throw new Error('Can\'t fetch Api Restcountries.');
+    return response.json();
+  })
+  .then(data => renderCountry(data[0]))
+  .catch(err => console.error(err.message));
+}
+
+whereAmII();
+
+const bodY = document.querySelector('body');
+
+const createImage = function(imgPath){
+  return new Promise(function(resolve, reject){
+    const img = document.createElement('img');
+    img.classList.add('img');
+    img.src = imgPath;
+    img.addEventListener('load', function(){
+      bodY.appendChild(img);
+      resolve(img);
+    })
+    img.addEventListener('error', function(){
+      reject(new Error('Cant load image.'));
+    })
+  })
+}
+
+let curImg;
+createImage('img/img-1.jpg')
+.then(img => {
+  curImg = img
+  return wait(2);
+})
+.then(() => {
+  curImg.style.display = 'none';
+  return createImage('img/img-2.jpg');
+})
+.then(img => {
+  curImg = img
+  return wait(2);
+})
+.then(() => {
+  curImg.style.display = 'none';
+  return createImage('img/img-3.jpg');
+})
+.then(img => {
+  curImg = img
+  return wait(2);
+})
+.then(() => {
+  curImg.style.display = 'none';
+})
+.catch(err => console.log(err.message));
