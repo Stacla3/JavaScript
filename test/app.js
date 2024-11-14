@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
 ////////////////////////////////////
@@ -468,7 +468,6 @@ const bill = 430;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 */
-
 
 /*
 ///////////////////////////////////////
@@ -1058,45 +1057,55 @@ console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
 
-const printForecast = function(arr){
-    let textForeCast = '';
-    for(let i = 0; i < arr.length; i++){
-        if(i == 0){
-            textForeCast += `... ${arr[i]}ºC in ${i+1} days ... `;
-        }else if(i == arr.length - 1){
-            textForeCast += `${arr[i]}ºC in ${i+1} days ...`;
-        }else{
-            textForeCast += `${arr[i]}ºC in ${i+1} days ... `;
-        }
+const printForecast = function (arr) {
+  let textForeCast = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (i == 0) {
+      textForeCast += `... ${arr[i]}ºC in ${i + 1} days ... `;
+    } else if (i == arr.length - 1) {
+      textForeCast += `${arr[i]}ºC in ${i + 1} days ...`;
+    } else {
+      textForeCast += `${arr[i]}ºC in ${i + 1} days ... `;
     }
-    console.log(textForeCast);
-}
+  }
+  console.log(textForeCast);
+};
 
 printForecast([5, 8, 0, -1, 53, 20, 78]);
 
 let arr = [3, 4, 5, 6, 7];
 let [x, y, z] = arr;
 console.log(x, y, z);
-[x, y ,z] = [z, y, x];
+[x, y, z] = [z, y, x];
 console.log(x, y, z);
 
 let testArr = [5, 3, 4, [4, 5, 6]];
-const [num1 = 0, , num2 = 0, [num3 = 0, num4 = 0, num5 = 0, num6 = 0]] = testArr;
+const [num1 = 0, , num2 = 0, [num3 = 0, num4 = 0, num5 = 0, num6 = 0]] =
+  testArr;
 console.log(num1, num2, num3, num4, num5, num6);
 
 const books = [
   {
-    title: 'Algorithms',
-    author: ['Robert Sedgewick', 'Kevin Wayne'],
-    publisher: 'Addison-Wesley Professional',
-    publicationDate: '2011-03-24',
+    title: "Algorithms",
+    author: ["Robert Sedgewick", "Kevin Wayne"],
+    publisher: "Addison-Wesley Professional",
+    publicationDate: "2011-03-24",
     edition: 4,
-    keywords: ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering'],
+    keywords: [
+      "computer science",
+      "programming",
+      "algorithms",
+      "data structures",
+      "java",
+      "math",
+      "software",
+      "engineering",
+    ],
     pages: 976,
-    format: 'hardcover',
-    ISBN: '9780321573513',
-    language: 'English',
-    programmingLanguage: 'Java',
+    format: "hardcover",
+    ISBN: "9780321573513",
+    language: "English",
+    programmingLanguage: "Java",
     onlineContent: true,
     thirdParty: {
       goodreads: {
@@ -1104,23 +1113,33 @@ const books = [
         ratingsCount: 1733,
         reviewsCount: 63,
         fiveStarRatingCount: 976,
-        oneStarRatingCount: 13
-      }
+        oneStarRatingCount: 13,
+      },
     },
-    highlighted: true
+    highlighted: true,
   },
   {
-    title: 'Structure and Interpretation of Computer Programs',
-    author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
-    publisher: 'The MIT Press',
-    publicationDate: '2022-04-12',
+    title: "Structure and Interpretation of Computer Programs",
+    author: [
+      "Harold Abelson",
+      "Gerald Jay Sussman",
+      "Julie Sussman (Contributor)",
+    ],
+    publisher: "The MIT Press",
+    publicationDate: "2022-04-12",
     edition: 2,
-    keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],
+    keywords: [
+      "computer science",
+      "programming",
+      "javascript",
+      "software",
+      "engineering",
+    ],
     pages: 640,
-    format: 'paperback',
-    ISBN: '9780262543231',
-    language: 'English',
-    programmingLanguage: 'JavaScript',
+    format: "paperback",
+    ISBN: "9780262543231",
+    language: "English",
+    programmingLanguage: "JavaScript",
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -1128,23 +1147,30 @@ const books = [
         ratingsCount: 14,
         reviewsCount: 3,
         fiveStarRatingCount: 8,
-        oneStarRatingCount: 0
-      }
+        oneStarRatingCount: 0,
+      },
     },
-    highlighted: true
+    highlighted: true,
   },
   {
-    title: 'Computer Systems: A Programmer\'s Perspective',
-    author: ['Randal E. Bryant', 'David Richard O\'Hallaron'],
-    publisher: 'Prentice Hall',
-    publicationDate: '2002-01-01',
+    title: "Computer Systems: A Programmer's Perspective",
+    author: ["Randal E. Bryant", "David Richard O'Hallaron"],
+    publisher: "Prentice Hall",
+    publicationDate: "2002-01-01",
     edition: 1,
-    keywords: ['computer science', 'computer systems', 'programming', 'software', 'C', 'engineering'],
+    keywords: [
+      "computer science",
+      "computer systems",
+      "programming",
+      "software",
+      "C",
+      "engineering",
+    ],
     pages: 978,
-    format: 'hardcover',
-    ISBN: '9780130340740',
-    language: 'English',
-    programmingLanguage: 'C',
+    format: "hardcover",
+    ISBN: "9780130340740",
+    language: "English",
+    programmingLanguage: "C",
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -1152,23 +1178,31 @@ const books = [
         ratingsCount: 1010,
         reviewsCount: 57,
         fiveStarRatingCount: 638,
-        oneStarRatingCount: 16
-      }
+        oneStarRatingCount: 16,
+      },
     },
-    highlighted: true
+    highlighted: true,
   },
   {
-    title: 'Operating System Concepts',
-    author: ['Abraham Silberschatz', 'Peter B. Galvin', 'Greg Gagne'],
-    publisher: 'John Wiley & Sons',
-    publicationDate: '2004-12-14',
+    title: "Operating System Concepts",
+    author: ["Abraham Silberschatz", "Peter B. Galvin", "Greg Gagne"],
+    publisher: "John Wiley & Sons",
+    publicationDate: "2004-12-14",
     edition: 10,
-    keywords: ['computer science', 'operating systems', 'programming', 'software', 'C', 'Java', 'engineering'],
+    keywords: [
+      "computer science",
+      "operating systems",
+      "programming",
+      "software",
+      "C",
+      "Java",
+      "engineering",
+    ],
     pages: 921,
-    format: 'hardcover',
-    ISBN: '9780471694663',
-    language: 'English',
-    programmingLanguage: 'C, Java',
+    format: "hardcover",
+    ISBN: "9780471694663",
+    language: "English",
+    programmingLanguage: "C, Java",
     onlineContent: false,
     thirdParty: {
       goodreads: {
@@ -1176,21 +1210,21 @@ const books = [
         ratingsCount: 2131,
         reviewsCount: 114,
         fiveStarRatingCount: 728,
-        oneStarRatingCount: 65
-      }
-    }
+        oneStarRatingCount: 65,
+      },
+    },
   },
   {
-    title: 'Engineering Mathematics',
-    author: ['K.A. Stroud', 'Dexter J. Booth'],
-    publisher: 'Palgrave',
-    publicationDate: '2007-01-01',
+    title: "Engineering Mathematics",
+    author: ["K.A. Stroud", "Dexter J. Booth"],
+    publisher: "Palgrave",
+    publicationDate: "2007-01-01",
     edition: 14,
-    keywords: ['mathematics', 'engineering'],
+    keywords: ["mathematics", "engineering"],
     pages: 1288,
-    format: 'paperback',
-    ISBN: '9781403942463',
-    language: 'English',
+    format: "paperback",
+    ISBN: "9781403942463",
+    language: "English",
     programmingLanguage: null,
     onlineContent: true,
     thirdParty: {
@@ -1199,78 +1233,88 @@ const books = [
         ratingsCount: 370,
         reviewsCount: 18,
         fiveStarRatingCount: 211,
-        oneStarRatingCount: 6
-      }
+        oneStarRatingCount: 6,
+      },
     },
-    highlighted: true
+    highlighted: true,
   },
   {
-    title: 'The Personal MBA: Master the Art of Business',
-    author: 'Josh Kaufman',
-    publisher: 'Portfolio',
-    publicationDate: '2010-12-30',
-    keywords: ['business'],
+    title: "The Personal MBA: Master the Art of Business",
+    author: "Josh Kaufman",
+    publisher: "Portfolio",
+    publicationDate: "2010-12-30",
+    keywords: ["business"],
     pages: 416,
-    format: 'hardcover',
-    ISBN: '9781591843528',
-    language: 'English',
+    format: "hardcover",
+    ISBN: "9781591843528",
+    language: "English",
     thirdParty: {
       goodreads: {
         rating: 4.11,
         ratingsCount: 40119,
         reviewsCount: 1351,
         fiveStarRatingCount: 18033,
-        oneStarRatingCount: 1090
-      }
-    }
+        oneStarRatingCount: 1090,
+      },
+    },
   },
   {
-    title: 'Crafting Interpreters',
-    author: 'Robert Nystrom',
-    publisher: 'Genever Benning',
-    publicationDate: '2021-07-28',
-    keywords: ['computer science', 'compilers', 'engineering', 'interpreters', 'software', 'engineering'],
+    title: "Crafting Interpreters",
+    author: "Robert Nystrom",
+    publisher: "Genever Benning",
+    publicationDate: "2021-07-28",
+    keywords: [
+      "computer science",
+      "compilers",
+      "engineering",
+      "interpreters",
+      "software",
+      "engineering",
+    ],
     pages: 865,
-    format: 'paperback',
-    ISBN: '9780990582939',
-    language: 'English',
+    format: "paperback",
+    ISBN: "9780990582939",
+    language: "English",
     thirdParty: {
       goodreads: {
         rating: 4.7,
         ratingsCount: 253,
         reviewsCount: 23,
         fiveStarRatingCount: 193,
-        oneStarRatingCount: 0
-      }
-    }
+        oneStarRatingCount: 0,
+      },
+    },
   },
   {
-    title: 'Deep Work: Rules for Focused Success in a Distracted World',
-    author: 'Cal Newport',
-    publisher: 'Grand Central Publishing',
-    publicationDate: '2016-01-05',
+    title: "Deep Work: Rules for Focused Success in a Distracted World",
+    author: "Cal Newport",
+    publisher: "Grand Central Publishing",
+    publicationDate: "2016-01-05",
     edition: 1,
-    keywords: ['work', 'focus', 'personal development', 'business'],
+    keywords: ["work", "focus", "personal development", "business"],
     pages: 296,
-    format: 'hardcover',
-    ISBN: '9781455586691',
-    language: 'English',
+    format: "hardcover",
+    ISBN: "9781455586691",
+    language: "English",
     thirdParty: {
       goodreads: {
         rating: 4.19,
         ratingsCount: 144584,
         reviewsCount: 11598,
         fiveStarRatingCount: 63405,
-        oneStarRatingCount: 1808
-      }
+        oneStarRatingCount: 1808,
+      },
     },
-    highlighted: true
-  }
+    highlighted: true,
+  },
 ];
 const [, , thirdBook] = books;
 console.log(thirdBook);
 
-const ratings = [['rating', 4.19], ['ratingsCount', 144584]];
+const ratings = [
+  ["rating", 4.19],
+  ["ratingsCount", 144584],
+];
 const [[, rating], [, ratingsCount]] = ratings;
 console.log(rating, ratingsCount);
 
@@ -1278,650 +1322,730 @@ const ratingStars = [63405, 1808];
 const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
 console.log(fiveStarRatings, threeStarRatings, oneStarRatings);
 
-const {title, author, ISBN} = books[0];
+const { title, author, ISBN } = books[0];
 console.log(title, author, ISBN);
 
-const {keywords: tags} = books[0];
+const { keywords: tags } = books[0];
 console.log(tags);
 
-const {language, programmingLanguage = 'unknown'} = books[6];
+const { language, programmingLanguage = "unknown" } = books[6];
 console.log(language, programmingLanguage);
 
-let bookTitle = 'unknown';
-let bookAuthor = 'unknown';
-({title : bookTitle , author: bookAuthor} = books[0]);
+let bookTitle = "unknown";
+let bookAuthor = "unknown";
+({ title: bookTitle, author: bookAuthor } = books[0]);
 console.log(bookTitle, bookAuthor);
 
-const { thirdParty : {goodreads :{rating : bookRating}}} = books[0];
+const {
+  thirdParty: {
+    goodreads: { rating: bookRating },
+  },
+} = books[0];
 console.log(bookRating);
 
-function printBookInfo({title, author, year = 'yearunknown'}){
+function printBookInfo({ title, author, year = "yearunknown" }) {
   console.log(`${title} by ${author}, ${year}`);
 }
 
-printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
+printBookInfo({
+  title: "Algorithms",
+  author: "Robert Sedgewick",
+  year: "2011",
+});
 
 const bookAuthors = [...books[0].author, ...books[1].author];
 console.log(bookAuthor);
 
-function spellWord(word){
+function spellWord(word) {
   console.log(...word);
 }
 
-spellWord('JavaScript');
+spellWord("JavaScript");
 
 const [mainKeyword, ...rest] = books[0].keywords;
 console.log(mainKeyword, rest);
 
-const {publisher: bookPublisher, ...restOfTheBook} = books[1];
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
 console.log(bookPublisher, restOfTheBook);
 
-function printBookAuthorsCount(title, ...authors){
+function printBookAuthorsCount(title, ...authors) {
   console.log(`The book ${title} has ${authors.length} authors`);
 }
 
-printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+printBookAuthorsCount("Algorithms", "Robert Sedgewick", "Kevin Wayne");
 
-const hasExamplesInJava  = function(book){
-  console.log(book.programmingLanguage === 'Java' || 'no data available');
-}
+const hasExamplesInJava = function (book) {
+  console.log(book.programmingLanguage === "Java" || "no data available");
+};
 hasExamplesInJava(books[0]);
 
-for(let i = 0; i < books.length; i++){
+for (let i = 0; i < books.length; i++) {
   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
 }
 
-const game = { 
-  team1: 'Bayern Munich', 
-  team2: 'Borrussia Dortmund', 
-  players: [ 
-    [ 
-      'Neuer', 
-      'Pavard', 
-      'Martinez', 
-      'Alaba', 
-      'Davies', 
-      'Kimmich', 
-      'Goretzka', 
-      'Coman', 
-      'Muller', 
-      'Gnarby', 
-      'Lewandowski', 
-    ], 
-    [ 
-      'Burki', 
-      'Schulz', 
-      'Hummels', 
-      'Akanji', 
-      'Hakimi', 
-      'Weigl', 
-      'Witsel', 
-      'Hazard', 
-      'Brandt', 
-      'Sancho', 
-      'Gotze', 
-    ], 
-  ], 
-  score: '4:0', 
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski',  
-  'Hummels'], 
-  date: 'Nov 9th, 2037', 
-  odds: { 
-    team1: 1.33, 
-    x: 3.25, 
-    team2: 6.5, 
-  }, 
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
 };
 
 const [players1, players2] = game.players;
 const [gk, ...fieldPlayers] = players1;
 const allPlayers = [...players1, ...players2];
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-const {team1, x: draw, team2} = game.odds
+const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+const { team1, x: draw, team2 } = game.odds;
 
-function printGoals(...arrPlayer){
+function printGoals(...arrPlayer) {
   console.log(`${arrPlayer.length} goals score.`);
 }
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich', ...game.score);
+printGoals("Davies", "Muller", "Lewandowski", "Kimmich", ...game.score);
 
-team1 < team2 && console.log(team1)
-team1 > team2 && console.log(team2)
+team1 < team2 && console.log(team1);
+team1 > team2 && console.log(team2);
 
-const schools = ['saintjohn', 'samsen', 'promptpun'];
-for(const item of schools) console.log(item);
+const schools = ["saintjohn", "samsen", "promptpun"];
+for (const item of schools) console.log(item);
 
-for(const item of schools.entries()) console.log(item[0] + 1, item[1]);
+for (const item of schools.entries()) console.log(item[0] + 1, item[1]);
 
-for(const [index, value] of schools.entries()) console.log(index+1, value);
+for (const [index, value] of schools.entries()) console.log(index + 1, value);
 
 let sum = 0;
 
-for(const item of books) sum += item.pages;
+for (const item of books) sum += item.pages;
 
 console.log(sum);
 
 const allAuthors = [];
-for(let book of books){
-  if(typeof book.author === 'object'){
-    for(let author of bookAuthor){
+for (let book of books) {
+  if (typeof book.author === "object") {
+    for (let author of bookAuthor) {
       allAuthors.push(author);
     }
-  }else{
+  } else {
     allAuthors.push(book.author);
   }
 }
 
-console.log(typeof [])
-for(let [index, author] of allAuthors.entries()){
-  console.log(index+1, author);
+console.log(typeof []);
+for (let [index, author] of allAuthors.entries()) {
+  console.log(index + 1, author);
 }
 
 const bookData = [
-  ['title', 'Computer Networking: A Top-Down Approach'],
-  ['author', ['James F. Kurose', 'Keith W. Ross']],
-  ['publisher', 'Addison Wesley'],
+  ["title", "Computer Networking: A Top-Down Approach"],
+  ["author", ["James F. Kurose", "Keith W. Ross"]],
+  ["publisher", "Addison Wesley"],
 ];
 
 // Do the rest
 const newBook = {
   [bookData[0][0]]: bookData[0][1],
   [bookData[1][0]]: bookData[1][1],
-  [bookData[2][0]]: bookData[2][1]
+  [bookData[2][0]]: bookData[2][1],
   // ...
 };
 
 const pages = 880;
 
 const newBook2 = {
-  title: 'The C Programming Language',
-  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
-  pages
+  title: "The C Programming Language",
+  author: ["Brian W. Kernighan", "Dennis M. Ritchie"],
+  pages,
   // ...
-}
+};
 console.log(newBook2);
 
-const getFirstKeyword = function(book){
+const getFirstKeyword = function (book) {
   console.log(book.keywords?.[0]);
-}
+};
 
 getFirstKeyword(books[0]); // from previous tasks
 
-for(let [key, value] of game.scored.entries()){
-  console.log(`Goal ${key+1}: ${value}`);
+for (let [key, value] of game.scored.entries()) {
+  console.log(`Goal ${key + 1}: ${value}`);
 }
 
 let averageOdd = 0;
 
 console.log(Object.values(game.odds));
-for(let value of Object.values(game.odds)){
+for (let value of Object.values(game.odds)) {
   averageOdd += value;
 }
 averageOdd /= Object.keys(game.odds).length;
 console.log(averageOdd);
 
-for(let [key, value] of Object.entries(game.odds)){
-  if(key === 'x'){
-    console.log(`Odd of draw ${game[key] ?? ''}: ${value}`);
-  }else{
-    console.log(`Odd of victory ${game[key] ?? ''}: ${value}`);
+for (let [key, value] of Object.entries(game.odds)) {
+  if (key === "x") {
+    console.log(`Odd of draw ${game[key] ?? ""}: ${value}`);
+  } else {
+    console.log(`Odd of victory ${game[key] ?? ""}: ${value}`);
   }
 }
 
-const scorers = {}
+const scorers = {};
 let count = 0;
-for(let player of game.scored){
-  scorers[player] ? scorers[player]+= 1 : scorers[player] = 1;
+for (let player of game.scored) {
+  scorers[player] ? (scorers[player] += 1) : (scorers[player] = 1);
 }
 
 const entries = [];
-for(let book of Object.keys(books[0].thirdParty.goodreads)){
+for (let book of Object.keys(books[0].thirdParty.goodreads)) {
   entries.push([book]);
 }
 
 // console.log(entries);
 
-for(let [key, value] of Object.values(books[0].thirdParty.goodreads).entries()){
+for (let [key, value] of Object.values(
+  books[0].thirdParty.goodreads
+).entries()) {
   entries[key].push(value);
 }
 
-const entries2 = Object.entries(books[0].thirdParty.goodreads)
-console.log(entries, entries2)
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+console.log(entries, entries2);
 
-const menu = new Set(["pasta", "pizza"])
+const menu = new Set(["pasta", "pizza"]);
 let allKeywords = [];
 const sets = new Set();
 
-for(let book of books){
+for (let book of books) {
   allKeywords.push(...book.keywords);
 }
 
 const uniqueKeywords = new Set(allKeywords);
-uniqueKeywords.add('coding');
-uniqueKeywords.add('science')
-uniqueKeywords.delete('business');
+uniqueKeywords.add("coding");
+uniqueKeywords.add("science");
+uniqueKeywords.delete("business");
 const uniqueKeywordsArr = [...uniqueKeywords];
 uniqueKeywords.clear();
 console.log(uniqueKeywords);
 
 const bookMap = new Map();
-bookMap.set('title', 'Clean Code').set('author', 'Robert C. Martin');
-bookMap.set('pages', 464);
-console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
-bookMap.has('author') ? console.log('The author of the book is known') : '';
+bookMap.set("title", "Clean Code").set("author", "Robert C. Martin");
+bookMap.set("pages", 464);
+console.log(`${bookMap.get("title")} by ${bookMap.get("author")}`);
+bookMap.has("author") ? console.log("The author of the book is known") : "";
 
 console.log([...bookMap.keys()]);
 console.log([...bookMap.values()]);
 
 const firstBookMap = new Map(Object.entries(books[0]));
 console.log(firstBookMap);
-for(let [key, value] of firstBookMap){
-  typeof value === 'number' ? console.log(key) : '';
+for (let [key, value] of firstBookMap) {
+  typeof value === "number" ? console.log(key) : "";
 }
 
-const gameEvents = new Map([ 
-  [17, '⚽ GOAL'], 
-  [36, '🔁 Substitution'], 
-  [47, '⚽ GOAL'], 
-  [61, '🔁 Substitution'], 
-  [64, '🔶 Yellow card'], 
-  [69, '🔴 Red card'], 
-  [70, '🔁 Substitution'], 
-  [72, '🔁 Substitution'], 
-  [76, '⚽ GOAL'], 
-  [80, '⚽ GOAL'], 
-  [92, '🔶 Yellow card'], 
+const gameEvents = new Map([
+  [17, "⚽ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "🔶 Yellow card"],
 ]);
 
 const events = [new Set([...gameEvents.values()])];
 gameEvents.delete(64);
 const lastEvent = [...gameEvents.keys()].pop();
-console.log(`An event happened, on average, every ${lastEvent/gameEvents.size} minutes`);
-for(let [minute, event] of gameEvents.entries()){
-  minute <= 45 ? console.log(`[FIRST HALF] ${minute}: ${event}`) : console.log(`[SECOND HALF] ${minute}: ${event}`);
+console.log(
+  `An event happened, on average, every ${lastEvent / gameEvents.size} minutes`
+);
+for (let [minute, event] of gameEvents.entries()) {
+  minute <= 45
+    ? console.log(`[FIRST HALF] ${minute}: ${event}`)
+    : console.log(`[SECOND HALF] ${minute}: ${event}`);
 }
 // console.log(events, gameEvents);
-console.log(books[0].ISBN[6], books[0].ISBN[4], books[0].ISBN[9], books[0].ISBN[8]);
-const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';
-console.log(quote.indexOf('chess'));
-console.log(quote.slice(quote.indexOf('boxing')));
-const isContributor = function(authorName){
-  const subStr = authorName.slice(authorName.indexOf('Contributor'), -1);
-  console.log(subStr === 'Contributor' ? true : false);
-}
+console.log(
+  books[0].ISBN[6],
+  books[0].ISBN[4],
+  books[0].ISBN[9],
+  books[0].ISBN[8]
+);
+const quote =
+  "A computer once beat me at chess, but it was no match for me at kick boxing";
+console.log(quote.indexOf("chess"));
+console.log(quote.slice(quote.indexOf("boxing")));
+const isContributor = function (authorName) {
+  const subStr = authorName.slice(authorName.indexOf("Contributor"), -1);
+  console.log(subStr === "Contributor" ? true : false);
+};
 
-isContributor('Julie Sussman (Contributor)');
-console.log('nickel'.replaceAll('n', 'k'));
+isContributor("Julie Sussman (Contributor)");
+console.log("nickel".replaceAll("n", "k"));
 
-function normalizeAuthorName(authorName){
-  const newAuthorName = String(authorName).toLowerCase().trim().slice(0, authorName.lastIndexOf(' ')-1);
-  const firstName = newAuthorName.slice(0, newAuthorName.indexOf(' '));
-  const lastName = newAuthorName.slice(newAuthorName.indexOf(' ')+1);
-  const newName = firstName[0].toUpperCase() + firstName.slice(1) + ' ' + lastName[0].toUpperCase() + lastName.slice(1);
+function normalizeAuthorName(authorName) {
+  const newAuthorName = String(authorName)
+    .toLowerCase()
+    .trim()
+    .slice(0, authorName.lastIndexOf(" ") - 1);
+  const firstName = newAuthorName.slice(0, newAuthorName.indexOf(" "));
+  const lastName = newAuthorName.slice(newAuthorName.indexOf(" ") + 1);
+  const newName =
+    firstName[0].toUpperCase() +
+    firstName.slice(1) +
+    " " +
+    lastName[0].toUpperCase() +
+    lastName.slice(1);
   console.log(newName);
 }
 
-normalizeAuthorName('  JuliE sussMan (Contributor)');
-const newBookTitle = books[1].title.replace('Programs', 'Software');
+normalizeAuthorName("  JuliE sussMan (Contributor)");
+const newBookTitle = books[1].title.replace("Programs", "Software");
 
-const logBookTheme = function(titleBook){
+const logBookTheme = function (titleBook) {
   const newTitleBook = String(titleBook).toLowerCase().trim();
-  if(newTitleBook.startsWith('computer')){
-    console.log('This book is about computers');
-  }else if(newTitleBook.includes('algorithms') && newTitleBook.includes('structures')){
-    console.log('This book is about algorithms and data structures');
-  }else if(newTitleBook.endsWith('system') || newTitleBook.endsWith('systems') && !newTitleBook.includes('operating')){
-    console.log('This book is about some systems, but definitely not about operating systems');
+  if (newTitleBook.startsWith("computer")) {
+    console.log("This book is about computers");
+  } else if (
+    newTitleBook.includes("algorithms") &&
+    newTitleBook.includes("structures")
+  ) {
+    console.log("This book is about algorithms and data structures");
+  } else if (
+    newTitleBook.endsWith("system") ||
+    (newTitleBook.endsWith("systems") && !newTitleBook.includes("operating"))
+  ) {
+    console.log(
+      "This book is about some systems, but definitely not about operating systems"
+    );
   }
-}
+};
 
-const logBookCategories = function(bookCategories){
-  const categories = bookCategories.split(';');
-  for(let c of categories)
-    console.log(c);
-}
+const logBookCategories = function (bookCategories) {
+  const categories = bookCategories.split(";");
+  for (let c of categories) console.log(c);
+};
 
-const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+const bookCategories =
+  "science;computing;computer science;algorithms;business;operating systems;networking;electronics";
 logBookCategories(bookCategories);
 
-function getKeywordsAsString(books){
+function getKeywordsAsString(books) {
   const arrBooks = [];
-  for(let b of books){
+  for (let b of books) {
     arrBooks.push(...b.keywords);
   }
   const arrBookUnique = [...new Set(arrBooks)];
-  console.log(arrBookUnique.join(';'));
+  console.log(arrBookUnique.join(";"));
 }
 
 getKeywordsAsString(books);
 
-function logBookChapters(arr){
-  for(let [key, value] of arr){
-    console.log(key.padEnd(20, '_'), value);
+function logBookChapters(arr) {
+  for (let [key, value] of arr) {
+    console.log(key.padEnd(20, "_"), value);
   }
 }
 
-const bookChapters = [['The Basics', 14], ['Sorting', 254], ['Searching', 372], ['Graphs', 526], ['Strings', 706]];
+const bookChapters = [
+  ["The Basics", 14],
+  ["Sorting", 254],
+  ["Searching", 372],
+  ["Graphs", 526],
+  ["Strings", 706],
+];
 logBookChapters(bookChapters);
 
-const modifyText = function(){
-  const valueTextare = document.querySelector('textarea').value;
-  const newValue = valueTextare.split('\n');
-  for(let [key, value] of newValue.entries()){
-    const [firstV, lastV] = value.trim().toLowerCase().split('_');
-    console.log(`${(firstV+lastV.replace(lastV[0], lastV[0].toUpperCase())).padEnd(20, ' ')} ${'✅'.repeat(key+1)}`);
+const modifyText = function () {
+  const valueTextare = document.querySelector("textarea").value;
+  const newValue = valueTextare.split("\n");
+  for (let [key, value] of newValue.entries()) {
+    const [firstV, lastV] = value.trim().toLowerCase().split("_");
+    console.log(
+      `${(firstV + lastV.replace(lastV[0], lastV[0].toUpperCase())).padEnd(
+        20,
+        " "
+      )} ${"✅".repeat(key + 1)}`
+    );
   }
-}
+};
 
-document.body.append(document.createElement('textarea')); 
-document.body.append(document.createElement('button'));
-const btn = document.querySelector('button');
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+const btn = document.querySelector("button");
 
 // btn.addEventListener('click', modifyText);
 
-const change3Str = str => str.slice(0, 3).toUpperCase();
-const flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-const arrFlights = flights.split('+');
-for(let flg of arrFlights){
-  const [state, start, end, time] = flg.split(';');
-  const emoji = state.startsWith('_Delayed') ? '😭 ' : '';
-  console.log(`${emoji}${state.replaceAll('_', ' ').trim()} from ${change3Str(start)} to ${change3Str(end)} (${time.replace(':', 'h')})`.padStart(45, ' '));
+const change3Str = (str) => str.slice(0, 3).toUpperCase();
+const flights =
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+const arrFlights = flights.split("+");
+for (let flg of arrFlights) {
+  const [state, start, end, time] = flg.split(";");
+  const emoji = state.startsWith("_Delayed") ? "😭 " : "";
+  console.log(
+    `${emoji}${state.replaceAll("_", " ").trim()} from ${change3Str(
+      start
+    )} to ${change3Str(end)} (${time.replace(":", "h")})`.padStart(45, " ")
+  );
 }
 
 //Low abstract || FirstClassfunction
-const convertStrToUpper = function(text){
+const convertStrToUpper = function (text) {
   return text.toUpperCase();
-}
+};
 
-const convertStrtoLower = function(text){
+const convertStrtoLower = function (text) {
   return text.toLowerCase();
-}
+};
 
 //High abstraction
 //high order function
-const tranformer = function(text, fn){
+const tranformer = function (text, fn) {
   console.log(`oldText = ${text}`);
   console.log(`newText = ${fn(text)}`);
   console.log(`changeby = ${fn.name}`);
-}
+};
 
-tranformer('HeLlo JaVascript', convertStrToUpper);
+tranformer("HeLlo JaVascript", convertStrToUpper);
 
 const greet = (greeting) => {
   return (name) => {
     console.log(`${greeting} ${name}`);
-  }
-}
+  };
+};
 
 // const sayHi = function(name){console.log(`${greeting} ${name}`);}
-const sayHi = greet('nickel');
-sayHi('Hello');
+const sayHi = greet("nickel");
+sayHi("Hello");
 
 const addTax = (rate) => (value) => value + value * rate;
 
 const addVax = addTax(0.23);
 console.log(addVax(23));
 
-const poll = { 
-  question: "What is your favourite programming language?", 
-  options: ["0: JavaScript", "1: Python", "2: Rust", "3:  C++"], 
-  // This generates [0, 0, 0, 0]. More in the next section! 
-  answers: new Array(4).fill(0), 
-  registerNewAnswer: function(){
-    const userAns = Number(prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`));
+const poll = {
+  question: "What is your favourite programming language?",
+  options: ["0: JavaScript", "1: Python", "2: Rust", "3:  C++"],
+  // This generates [0, 0, 0, 0]. More in the next section!
+  answers: new Array(4).fill(0),
+  registerNewAnswer: function () {
+    const userAns = Number(
+      prompt(
+        `${this.question}\n${this.options.join("\n")}\n(Write option number)`
+      )
+    );
     // console.log(this);
-    typeof userAns === 'number' && userAns < this.answers.length ? this.answers[userAns] ++: '';
+    typeof userAns === "number" && userAns < this.answers.length
+      ? this.answers[userAns]++
+      : "";
     // console.log(this.answers[userAns]);
     this.displayResults();
-    this.displayResults('string');
+    this.displayResults("string");
   },
-  displayResults: function(type = 'array'){
-    if(type === 'string'){
-      console.log(`Poll results are ${this.answers.join(', ')}`);
-    }else{
+  displayResults: function (type = "array") {
+    if (type === "string") {
+      console.log(`Poll results are ${this.answers.join(", ")}`);
+    } else {
       console.log(this.answers);
     }
-  }
-  
+  },
 };
 
-document.querySelector('.btnAns').addEventListener('click', poll.registerNewAnswer.bind(poll));
-const newArr = poll.displayResults.bind({answers: [5, 2, 3]});
-newArr('string');
+document
+  .querySelector(".btnAns")
+  .addEventListener("click", poll.registerNewAnswer.bind(poll));
+const newArr = poll.displayResults.bind({ answers: [5, 2, 3] });
+newArr("string");
 
 //run one function IFFE
-(function(){
-  console.log('hello javascript');
+(function () {
+  console.log("hello javascript");
 })();
 
-(() => console.log('hello again!'))();
+(() => console.log("hello again!"))();
 
 let c;
-const a = function(){
+const a = function () {
   let b = 777;
-  c = function(){
+  c = function () {
     console.log(`nick is gay.${++b}`);
-  }
-}
+  };
+};
 a();
 c();
 c();
 c();
 console.dir(c);
 
-(function () { 
-  const header = document.querySelector('h1'); 
-  header.style.color = 'red'; 
-  document.body.addEventListener('click', function(){
-    header.style.color = 'blue';
-  })
+(function () {
+  const header = document.querySelector("h1");
+  header.style.color = "red";
+  document.body.addEventListener("click", function () {
+    header.style.color = "blue";
+  });
 })();
 
-const checkDogs = function(dogsJulia , dogsKate){
+const checkDogs = function (dogsJulia, dogsKate) {
   const dogsJuliaNocat = [...dogsJulia];
   dogsJuliaNocat.splice(0, 1);
   dogsJuliaNocat.splice(-2);
   const concatDogs = dogsJuliaNocat.concat(dogsKate);
-  concatDogs.forEach(function(dog, numDog){
-    dog < 3 ? console.log(`Dog number ${numDog+1} is still a puppy`) : console.log(`Dog number ${numDog+1} is an adult, and is ${dog} years old`);
-  })
-}
+  concatDogs.forEach(function (dog, numDog) {
+    dog < 3
+      ? console.log(`Dog number ${numDog + 1} is still a puppy`)
+      : console.log(
+          `Dog number ${numDog + 1} is an adult, and is ${dog} years old`
+        );
+  });
+};
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 
-const calcAverageHumanAge = function(ages){
+const calcAverageHumanAge = function (ages) {
   const avgHumanAges = ages
-                        .map((age) => age <= 2 ? 2 * age : 16 + age * 4)
-                        .filter(age => age > 18)
-                        .reduce((sum, age, i, arr) => sum + age/arr.length, 0);
+    .map((age) => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter((age) => age > 18)
+    .reduce((sum, age, i, arr) => sum + age / arr.length, 0);
   return avgHumanAges;
-}
+};
 
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
 
-const dogs = [ 
-  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] }, 
-  { weight: 8, curFood: 200, owners: ['Matilda'] }, 
-  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] }, 
-  { weight: 32, curFood: 340, owners: ['Michael'] }, 
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
 ];
 
-dogs.forEach(function(dog){
+dogs.forEach(function (dog) {
   dog.recommendedFood = dog.weight ** 0.75 * 28;
   // console.log(dog.recommendedFood*0.90, dog.recommendedFood * 1.1 , dog.recommendedFood, dog.curFood);
 });
 
-const findSarahDogs = dogs.find(function(dog){
-  return dog.owners.includes('Sarah');
-})
+const findSarahDogs = dogs.find(function (dog) {
+  return dog.owners.includes("Sarah");
+});
 
-console.log(`Sarah dog is ${findSarahDogs.curFood > findSarahDogs.recommendedFood ? 'Eating to much.' : 'Eating to little.'}`);
+console.log(
+  `Sarah dog is ${
+    findSarahDogs.curFood > findSarahDogs.recommendedFood
+      ? "Eating to much."
+      : "Eating to little."
+  }`
+);
 
-const ownersEatTooMuch = dogs.filter(function(dog){
-  return dog.curFood > dog.recommendedFood;
-}).flatMap(function(dog){
-  return dog.owners;
-})
+const ownersEatTooMuch = dogs
+  .filter(function (dog) {
+    return dog.curFood > dog.recommendedFood;
+  })
+  .flatMap(function (dog) {
+    return dog.owners;
+  });
 
-const ownersEatTooLittle = dogs.filter(function(dog){
-  return dog.curFood < dog.recommendedFood;
-}).flatMap(function(dog){
-  return dog.owners;
-})
+const ownersEatTooLittle = dogs
+  .filter(function (dog) {
+    return dog.curFood < dog.recommendedFood;
+  })
+  .flatMap(function (dog) {
+    return dog.owners;
+  });
 
-console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
-console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+console.log(`${ownersEatTooMuch.join(" and ")}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(" and ")}'s dogs eat too little!`);
 
-const checkDog = dogs.some(function(dog){
+const checkDog = dogs.some(function (dog) {
   return dog.curFood === dog.recommendedFood;
-})
+});
 
-const healthyDog = dogs.some(function(dog){
-  return dog.curFood > (dog.recommendedFood * 0.90) && dog.curFood < (dog.recommendedFood * 1.10)
-})
+const healthyDog = dogs.some(function (dog) {
+  return (
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 1.1
+  );
+});
 
 console.log(checkDog, healthyDog);
 
-const healthyDogs = dogs.filter(function(dog){
-  return dog.curFood > (dog.recommendedFood * 0.90) && dog.curFood < (dog.recommendedFood * 1.10)
-})
+const healthyDogs = dogs.filter(function (dog) {
+  return (
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 1.1
+  );
+});
 
 console.log(healthyDogs);
 
-const sortedDogs = Array.from(dogs).sort(function(x, y){
+const sortedDogs = Array.from(dogs).sort(function (x, y) {
   return x.recommendedFood - y.recommendedFood;
 });
 
 console.log(sortedDogs);
 
-const Person = function(firstName, lastName){
+const Person = function (firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
-}
+};
 
-const nickel = new Person('Thanapat', 'Malikaew');
+const nickel = new Person("Thanapat", "Malikaew");
 
-Person.prototype.fullName = function(){
+Person.prototype.fullName = function () {
   console.log(this.firstName + this.lastName);
-}
+};
 
-nickel.fullName()
+nickel.fullName();
 console.log(Person.prototype === nickel.__proto__);
 console.log(Person.prototype.isPrototypeOf(nickel));
 
-Person.prototype.phoneNumber = '074-414-4343';
-console.log(nickel.hasOwnProperty('phoneNumber'));
-console.log(nickel.hasOwnProperty('firstName'));
+Person.prototype.phoneNumber = "074-414-4343";
+console.log(nickel.hasOwnProperty("phoneNumber"));
+console.log(nickel.hasOwnProperty("firstName"));
 
-const Car = function(make, speed){
+const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
-}
+};
 
-Car.prototype.accelerate = function(){
+Car.prototype.accelerate = function () {
   this.speed += 10;
   console.log(this.speed);
-}
+};
 
-Car.prototype.brake = function(){
+Car.prototype.brake = function () {
   this.speed -= 5;
   console.log(this.speed);
-}
+};
 
-const car1 = new Car('BMW', 120);
-const car2 = new Car('Mercedes', 95);
+const car1 = new Car("BMW", 120);
+const car2 = new Car("Mercedes", 95);
 car1.accelerate();
 car1.brake();
 car2.accelerate();
 car2.brake();
 
 class Food {
-  constructor(name, price){
+  constructor(name, price) {
     this.name = name;
-    //protected 
+    //protected
     this._price = price;
   }
-  calcPrice(){
+  calcPrice() {
     return this._price * 4;
   }
-  get name(){
+  get name() {
     return this._name;
   }
-  set name(name){
+  set name(name) {
     this._name = name;
   }
-  getPrice(){
+  getPrice() {
     return this._price;
   }
   // instance ไม่ได้รับสืบทอด method นี้
-  static restaurant(){
-    return this.restaurant = 'nickelStyle';
+  static restaurant() {
+    return (this.restaurant = "nickelStyle");
   }
 }
 
 const pizza = new Food();
-pizza.name = 'pizzahut';
-console.log(pizza.name)
+pizza.name = "pizzahut";
+console.log(pizza.name);
 console.log(pizza.calcPrice());
 // console.log(pizza.restaurant);
 
 const PersonNickel = {
-  greet: function(){
-    console.log('hi nick');
-  }
-}
+  greet: function () {
+    console.log("hi nick");
+  },
+};
 
 const nick = Object.create(PersonNickel);
 nick.greet();
 console.log(nick.__proto__ === PersonNickel);
 
 class CarCl {
-  constructor(make, speed){
+  constructor(make, speed) {
     this.make = make;
     this.speed = speed;
   }
-  set speedUS(speed){
+  set speedUS(speed) {
     this.speed = this.speed * 1.6;
   }
-  get speedUS(){
+  get speedUS() {
     return this.speed / 1.6;
   }
-  accelerate(){
+  accelerate() {
     this.speed += 10;
     console.log(this.speed);
   }
-  brake(){
+  brake() {
     this.speed -= 10;
     console.log(this.speed);
     return this;
   }
 }
 
-const carC1 = new CarCl('BMW', 120);
-const carC2 = new CarCl('Mercedes', 95);
+const carC1 = new CarCl("BMW", 120);
+const carC2 = new CarCl("Mercedes", 95);
 carC1.accelerate();
 carC1.brake();
 carC2.accelerate();
 carC2.brake();
 console.log(carC1.speedUS, carC2.speedUS, carC1 instanceof Object);
 
-const EV = function(make, speed, charge){
+const EV = function (make, speed, charge) {
   Car.call(this, make, speed);
   this.charge = charge;
-}
+};
 
 EV.prototype = Object.create(Car.prototype);
 
-EV.prototype.chargeBattery = function(chargeTo){
+EV.prototype.chargeBattery = function (chargeTo) {
   this.charge = chargeTo;
-}
+};
 
-EV.prototype.accelerate = function(){
+EV.prototype.accelerate = function () {
   this.speed += 20;
-  this.charge --;
-  console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`);
-}
+  this.charge--;
+  console.log(
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`
+  );
+};
 
-const ec1 = new EV('Tesla', 120, 23);
+const ec1 = new EV("Tesla", 120, 23);
 console.log(ec1);
 ec1.accelerate();
 ec1.brake();
@@ -1929,51 +2053,57 @@ ec1.chargeBattery(50);
 ec1.accelerate();
 ec1.brake();
 
-class EVCl extends CarCl{
+class EVCl extends CarCl {
   #charge;
-  constructor(make, speed, charge){
+  constructor(make, speed, charge) {
     super(make, speed);
     this.#charge = charge;
   }
-  chargeBattery(chargeTo){
+  chargeBattery(chargeTo) {
     this.#charge = chargeTo;
     return this;
   }
-  accelerate(){
+  accelerate() {
     this.speed += 20;
-    this.#charge --;
-    console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.#charge}%`);
+    this.#charge--;
+    console.log(
+      `${this.make} going at ${this.speed} km/h, with a charge of ${
+        this.#charge
+      }%`
+    );
     return this;
   }
 }
 
-const evc1 = new EVCl('Rivian', 120, 23);
+const evc1 = new EVCl("Rivian", 120, 23);
 evc1.chargeBattery(90).accelerate().brake().chargeBattery(50).accelerate();
 console.log(evc1);
 
 //AJAX
 
-const h1El = document.querySelector('h1');
-h1El.style.display = 'none';
+const h1El = document.querySelector("h1");
+h1El.style.display = "none";
 
-const renderCountry = function(data){
+const renderCountry = function (data) {
   const fifa = data.fifa.toLowerCase();
   const languageC = data.languages[`${fifa}`];
-  const {cur, ...currencies} = data.currencies;
-  console.log(languageC, currencies)
+  const { cur, ...currencies } = data.currencies;
+  console.log(languageC, currencies);
   const html = `
         <article class="country">
           <img class="country__img" src="${data.flags.svg}" />
           <div class="country__data">
           <h3 class="country__name">${data.name.common}</h3>
           <h4 class="country__region">${data.region}</h4>
-          <p class="country__row"><span>👫</span>${(data.population/10000000).toFixed(1)*10000000}</p>
+          <p class="country__row"><span>👫</span>${
+            (data.population / 10000000).toFixed(1) * 10000000
+          }</p>
           <p class="country__row"><span>🗣️</span>${languageC}</p>
           <p class="country__row"><span>💰</span>${data.currencies}</p>
         </div>
-      </article>`
-  h1El.insertAdjacentHTML('beforebegin', html);
-}
+      </article>`;
+  h1El.insertAdjacentHTML("beforebegin", html);
+};
 
 // const getCountryNeighboor = function(country){
 //   const request = new XMLHttpRequest();
@@ -2000,46 +2130,52 @@ const renderCountry = function(data){
 
 // getCountryNeighboor('thailand');
 
-const getJSON = function(url, errorMsg = 'Some thing went wrong.'){
-  return fetch(url).then(function(response){
-    if(!response.ok) 
-      throw new Error(`${errorMsg}`)
+const getJSON = function (url, errorMsg = "Some thing went wrong.") {
+  return fetch(url).then(function (response) {
+    if (!response.ok) throw new Error(`${errorMsg}`);
     return response.json();
-  })
-}
+  });
+};
 
-const getCountryData = function(country){
-  getJSON(`https://restcountries.com/v3.1/name/${country}`, 'Country not found.')
-  .then(data => {
-    renderCountry(data[0])
-    const neighboor = data[0].borders?.[0];
-    if(!neighboor) return;
-    return getJSON(`https://restcountries.com/v3.1/alpha/${neighboor}`, 'Country not found.');
-  })
-  .then(data => renderCountry(data[0]))
-  .catch(err => console.error(`${err} 😭`));
-}
+const getCountryData = function (country) {
+  getJSON(
+    `https://restcountries.com/v3.1/name/${country}`,
+    "Country not found."
+  )
+    .then((data) => {
+      renderCountry(data[0]);
+      const neighboor = data[0].borders?.[0];
+      if (!neighboor) return;
+      return getJSON(
+        `https://restcountries.com/v3.1/alpha/${neighboor}`,
+        "Country not found."
+      );
+    })
+    .then((data) => renderCountry(data[0]))
+    .catch((err) => console.error(`${err} 😭`));
+};
 
-const whereAmI = function(lat, lng){
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`)
-  .then(response => {
-    if(!response.ok) 
-      throw new Error('You musn\'t reload your web page 3 time/second.')
-    return response.json()
-  })
-  .then(data => {
-    console.log(`You are in ${data.city}, ${data.country}`)
-    console.log(data);
-    return fetch(`https://restcountries.com/v3.1/name/${data.country}`)
-  })
-  .then(response => {
-    if(!response.ok)
-      throw new Error('Can\'t fetch Api Restcountries.');
-    return response.json();
-  })
-  .then(data => renderCountry(data[0]))
-  .catch(err => console.error(err.message));
-}
+const whereAmI = function (lat, lng) {
+  fetch(
+    `https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`
+  )
+    .then((response) => {
+      if (!response.ok)
+        throw new Error("You musn't reload your web page 3 time/second.");
+      return response.json();
+    })
+    .then((data) => {
+      console.log(`You are in ${data.city}, ${data.country}`);
+      console.log(data);
+      return fetch(`https://restcountries.com/v3.1/name/${data.country}`);
+    })
+    .then((response) => {
+      if (!response.ok) throw new Error("Can't fetch Api Restcountries.");
+      return response.json();
+    })
+    .then((data) => renderCountry(data[0]))
+    .catch((err) => console.error(err.message));
+};
 
 whereAmI(19.037, 72.873);
 whereAmI(-33.933, 18.474);
@@ -2052,105 +2188,217 @@ whereAmI(-33.933, 18.474);
 
 // getDataApi();
 
-const lotteryPromise = new Promise(function(resolve, reject){
-  if(Math.random() >= 0.5)
-    resolve('You win 🎉');
-  else
-    reject(new Error('You lose 😭'));
+const lotteryPromise = new Promise(function (resolve, reject) {
+  if (Math.random() >= 0.5) resolve("You win 🎉");
+  else reject(new Error("You lose 😭"));
+});
 
-})
+lotteryPromise.then((response) => console.log(response));
 
-lotteryPromise.then(response => console.log(response));
-
-const wait = function(seconds){
-  return new Promise(function(resolve){
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
-  })
-}
+  });
+};
 
 wait(2).then(() => wait(3));
 
-
-
-const getPosition = function(){
-  return new Promise(function(resolve, reject){
-    navigator.geolocation.getCurrentPosition(position => {
-      resolve(position);
-    }, error => {
-      reject(error);
-    })
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        resolve(position);
+      },
+      (error) => {
+        reject(error);
+      }
+    );
   });
-}
+};
 
-getPosition().then(pos => console.log(pos));
-const whereAmII = function(){
+getPosition().then((pos) => console.log(pos));
+const whereAmII = function () {
   getPosition()
-  .then(pos => {
-    const {latitude: lat, longitude: lng} = pos.coords;
-    console.log(lat, lng);
-    return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`)
-  })
-  .then(response => {
-    if(!response.ok) 
-      throw new Error('You musn\'t reload your web page 3 time/second.')
-    return response.json()
-  })
-  .then(data => {
-    console.log(`You are in ${data.city}, ${data.country}`)
-    console.log(data);
-    return fetch(`https://restcountries.com/v3.1/name/${data.country}`)
-  })
-  .then(response => {
-    if(!response.ok)
-      throw new Error('Can\'t fetch Api Restcountries.');
-    return response.json();
-  })
-  .then(data => renderCountry(data[0]))
-  .catch(err => console.error(err.message));
-}
+    .then((pos) => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      console.log(lat, lng);
+      return fetch(
+        `https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`
+      );
+    })
+    .then((response) => {
+      if (!response.ok)
+        throw new Error("You musn't reload your web page 3 time/second.");
+      return response.json();
+    })
+    .then((data) => {
+      console.log(`You are in ${data.city}, ${data.country}`);
+      console.log(data);
+      return fetch(`https://restcountries.com/v3.1/name/${data.country}`);
+    })
+    .then((response) => {
+      if (!response.ok) throw new Error("Can't fetch Api Restcountries.");
+      return response.json();
+    })
+    .then((data) => renderCountry(data[0]))
+    .catch((err) => console.error(err.message));
+};
 
 whereAmII();
 
-const bodY = document.querySelector('body');
+// const bodY = document.querySelector('body');
 
-const createImage = function(imgPath){
-  return new Promise(function(resolve, reject){
-    const img = document.createElement('img');
-    img.classList.add('img');
+// const createImage = function(imgPath){
+//   return new Promise(function(resolve, reject){
+//     const img = document.createElement('img');
+//     img.classList.add('img');
+//     img.src = imgPath;
+//     img.addEventListener('load', function(){
+//       bodY.appendChild(img);
+//       resolve(img);
+//     })
+//     img.addEventListener('error', function(){
+//       reject(new Error('Cant load image.'));
+//     })
+//   })
+// }
+
+// let curImg;
+// createImage('img/img-1.jpg')
+// .then(img => {
+//   curImg = img
+//   return wait(2);
+// })
+// .then(() => {
+//   curImg.style.display = 'none';
+//   return createImage('img/img-2.jpg');
+// })
+// .then(img => {
+//   curImg = img
+//   return wait(2);
+// })
+// .then(() => {
+//   curImg.style.display = 'none';
+//   return createImage('img/img-3.jpg');
+// })
+// .then(img => {
+//   curImg = img
+//   return wait(2);
+// })
+// .then(() => {
+//   curImg.style.display = 'none';
+// })
+// .catch(err => console.log(err.message));
+
+const whereAmV2 = async function () {
+  try {
+    const pos = await getPosition();
+    const { latitude: lat, longitude: lng } = pos.coords;
+    const resGeo = await fetch(
+      `https://geocode.xyz/${lat},${lng}?geoit=json&auth=296009625186078956344x64919`
+    );
+    if (!resGeo.ok) throw new Error("Cant load the data position.");
+    const dataGeo = await resGeo.json();
+    const res = await fetch(
+      `https://restcountries.com/v3.1/name/${dataGeo.country}`
+    );
+    if (!res.ok) throw new Error("Cant load the data restcountry.");
+    const data = await res.json();
+    renderCountry(data[0]);
+    return "Hello Async Funciton.";
+  } catch (err) {
+    console.log(err.message);
+    throw err;
+  }
+};
+
+(async function () {
+  try {
+    const res = await whereAmV2();
+    console.log(res);
+  } catch (err) {
+    console.log(err.message);
+  }
+})();
+
+const get3Country = async function (c1, c2, c3) {
+  try {
+    // const [data1] = await getJSON(`https://restcountries.com/v3.1/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v3.1/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v3.1/name/${c3}`);
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v3.1/name/${c1}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c2}`),
+      getJSON(`https://restcountries.com/v3.1/name/${c3}`),
+    ]);
+    console.log(data.map((d) => d[0].capital));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+get3Country("thailand", "canada", "portugal");
+
+// const createImage = function(imgPath){
+//   return new Promise(function(resolve, reject){
+//     const img = document.createElement('img');
+//     img.classList.add('img');
+//     img.src = imgPath;
+//     img.addEventListener('load', function(){
+//       bodY.appendChild(img);
+//       resolve(img);
+//     })
+//     img.addEventListener('error', function(){
+//       reject(new Error('Cant load image.'));
+//     })
+//   })
+// }
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const img = document.createElement("img");
+    img.classList.add("img");
     img.src = imgPath;
-    img.addEventListener('load', function(){
+    img.addEventListener("load", function () {
       bodY.appendChild(img);
       resolve(img);
-    })
-    img.addEventListener('error', function(){
-      reject(new Error('Cant load image.'));
-    })
-  })
-}
+    });
+    img.addEventListener("error", function () {
+      reject(new Error("Cant load image."));
+    });
+  });
+};
 
-let curImg;
-createImage('img/img-1.jpg')
-.then(img => {
-  curImg = img
-  return wait(2);
-})
-.then(() => {
-  curImg.style.display = 'none';
-  return createImage('img/img-2.jpg');
-})
-.then(img => {
-  curImg = img
-  return wait(2);
-})
-.then(() => {
-  curImg.style.display = 'none';
-  return createImage('img/img-3.jpg');
-})
-.then(img => {
-  curImg = img
-  return wait(2);
-})
-.then(() => {
-  curImg.style.display = 'none';
-})
-.catch(err => console.log(err.message));
+const bodY = document.querySelector("body");
+const loadNPause = async function () {
+  try {
+    let img = await createImage("img/img-1.jpg");
+    await wait(2);
+    img.style.display = "none";
+
+    img = await createImage("img/img-2.jpg");
+    await wait(2);
+    img.style.display = "none";
+
+    img = await createImage("img/img-3.jpg");
+    await wait(2);
+    img.style.display = "none";
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async (img) => {
+      const imgData = await createImage(img);
+      return imgData;
+    });
+    const imgAll = await Promise.all(imgs);
+    imgAll.forEach((img) => img.classList.add("parallel"));
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+loadAll(["img/img-1.jpg", "img/img-2.jpg", "img/img-3.jpg"]);
